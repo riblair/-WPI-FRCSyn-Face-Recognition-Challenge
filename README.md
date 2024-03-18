@@ -1,1 +1,1 @@
-# -WPI-FRCSyn-Face-Recognition-Challenge
+# WPI-FRCSyn-Face-Recognition-Challenge
