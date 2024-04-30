@@ -1,0 +1,4 @@
+opencv-contrib-python-headless
+retina-face
+tf-keras
+matplotlib
