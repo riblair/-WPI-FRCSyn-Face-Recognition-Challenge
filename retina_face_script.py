@@ -102,14 +102,15 @@ if __name__ == "__main__":
         for file in files:
             if is_image(file):
                 # Construct full file path
-                # print(f'subdir {os.path.relpath(file_path, start=subdir)}')
+                # print(f'subdir {subdir} dirs {dirs}')
                 file_path = os.path.join(subdir, file)
                 relative_path = os.path.relpath(subdir, start=root_dir)
+                # print(relative_path)
                 out_folder = os.path.join(out_dir,relative_path)
                 # print(f'out_path {out_folder}')
                 if not os.path.exists(out_folder):
                     try: 
-                        os.mkdir(out_folder)
+                        os.makedirs(out_folder)
                     except FileExistsError as e:
                         print(f'Recieved FileExistsError{e}')
                         
@@ -121,11 +122,7 @@ if __name__ == "__main__":
                 # Load and process the image
                 align_and_resize(file_path,out_path)
                 total +=1
-                if total % 200:
+                if total % 200 == 0:
                     print(f'total parsed {total}!')
             else:
-                print(f"Failed to read image: {file_path}")
-
-# for each image in directory
-    
-# Detect faces
+                print(f"Failed to read image: {file}")

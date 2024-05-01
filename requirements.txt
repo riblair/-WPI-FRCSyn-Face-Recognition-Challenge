@@ -1,4 +1,14 @@
-opencv-contrib-python-headless
+numpy
+opencv-python
+scikit-learn
+albumentations --no-binary qudida,albumentations
+torch >=2.0
+torchvision >=0.15
+lightning >=2.0
+deepface
+facenet-pytorch
+jsonargparse[signatures]
+wandb
+omegaconf
 retina-face
 tf-keras
-matplotlib

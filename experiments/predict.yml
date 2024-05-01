@@ -1,0 +1,27 @@
+seed_everything: 42
+
+data:
+  val_n_classes: 100
+  max_matches_per_image: 5
+  max_nonmatches_per_image: 5
+  augment: false
+  num_workers: 4
+
+trainer:
+  log_every_n_steps: 100
+  accelerator: gpu
+  logger: false
+  callbacks:
+    - class_path: PredictionWriter
+      init_args:
+        datasets_names:
+          - agedb
+          - bupt
+          - cfp-fp
+          - rof
+        filename: proposed.txt
+        output_dir: D:\frcsyn-datasets\submission_4\2.1
+    - class_path: lightning.pytorch.callbacks.ModelSummary
+      init_args:
+        max_depth: 4
+    - class_path: lightning.pytorch.callbacks.TQDMProgressBar
